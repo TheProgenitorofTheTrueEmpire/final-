@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fa">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet"
+        type="text/css" />
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            direction: rtl;
+            font-family: vazirmatn;
+        }
+
+        table {
+            width: 70%;
+            border-collapse: collapse;
+            margin: 1px auto;
+        }
+
+        th {
+            border: 1px solid #5b7df7;
+            padding: 10px;
+            background-color: #f7d765;
+            color: #839df9;
+        }
+
+        td {
+            border: 1px solid #1b731d;
+            color: #e0fae3;
+            background-color: #631761;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table>
+        <tr id="headerRow">
+            <th>ژانر</th>
+            <th>سال</th>
+            <th>شرکت</th>
+            <th>نام</th>
+        </tr>
+        <tbody id="studentTableBody">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        const students = [
+
+            { name: "تیراندازی اول‌شخص", year: "۱۰ نوامبر ۲۰۲۳", maker: "والتر مِیر", game: "ندای وظیفه: جنگ مدرن ۳" },
+            { name: "تیراندازی اول‌شخص", year: "۲۵ اکتبر ۲۰۱۹",  maker: "والتر مِیر", game: "ندای وظیفه: جنگ مدرن" },
+            { name: "تیراندازی اول‌شخص", year: "۲۸ اکتبر ۲۰۲۲",  maker: "والتر مِیر", game: "ندای وظیفه: جنگ مدرن" }
+
+        ];
+        const tableBody = document.getElementById("studentTableBody");
+
+        for (let i = 0; i < students.length; i++) {
+            const row = document.createElement("tr");
+            const nameCell = document.createElement("td");
+            nameCell.textContent = students[i].name;
+            row.appendChild(nameCell);
+            const idCell = document.createElement("td");
+            idCell.textContent = students[i].year;
+            row.appendChild(idCell);
+            const ageCell = document.createElement("td");
+            ageCell.textContent = students[i].maker;
+            row.appendChild(ageCell);
+            const gameCell = document.createElement("td");
+            gameCell.textContent = students[i].game;
+            row.appendChild(gameCell);
+
+
+
+
+tableBody.appendChild(row);
+        }
+        
+    </script>
+
+</body>
+
+</html>
